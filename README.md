@@ -1,5 +1,5 @@
 <div align="center"> 
-  <img widht="150px" height="150px" src="https://cdn.worldvectorlogo.com/logos/react-2.svg" />
+  <img widht="150px" height="150px" src="logo.svg" />
   <h1>NextJS Course from <a target="_blank" href="#">Udemy</a></h1>
 </div>
 
