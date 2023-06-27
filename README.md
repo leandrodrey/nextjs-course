@@ -1,5 +1,5 @@
 <div align="center"> 
-  <img widht="150px" height="150px" src="logo.svg" />
+  <img widht="150px" height="150px" src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg" />
   <h1>NextJS Course from <a target="_blank" href="#">Udemy</a></h1>
 </div>
 
