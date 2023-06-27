@@ -4,22 +4,27 @@
   <h1>NextJS Course from <a target="_blank" href="#">Udemy</a></h1>
 </div>
 
-## General information about projects
+# General information about projects
 I will use one repository for all projects.
 
-## How to run the app with Docker
+# Create NextJS project using yarn
+```bash
+yarn create next-app nextjs-course --typescript
+```
 
-### Create image of docker:
+# How to run the app with Docker
+
+## Create image of docker:
 ```bash
 docker build -t nextjs-course .
 ```
 
-### Run docker image:
+## Run docker image:
 ```bash
 docker run --name=nextjs-course -p 3000:3000 nextjs-course
 ```
 
-### Run docker image in port 80:
+## Run docker image in port 80:
 ```bash
 docker run --name=nextjs-course -p 80:3000 nextjs-course
 ```
