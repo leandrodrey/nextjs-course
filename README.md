@@ -9,7 +9,7 @@ I will use one repository for all projects.
 
 # Create NextJS project using yarn
 ```bash
-yarn create next-app nextjs-course --typescript
+yarn create next-app
 ```
 
 # How to run the app with Docker
