@@ -5,7 +5,10 @@
 </div>
 
 # General information about projects
-I will use one repository for all projects.
+I will use one repository for all projects divided by folders.
+
+- Project 1: /project1: NextJS with Typescript and Styled Components
+- Project 2: /pokemon-static
 
 # Create NextJS project using yarn
 ```bash
