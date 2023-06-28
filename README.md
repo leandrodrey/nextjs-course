@@ -5,29 +5,37 @@
 </div>
 
 # General information about projects
-I will use one repository for all projects divided by folders.
+- I will use one repository for all projects divided by folders.
 
 1. Project 1: /project1: NextJS with Typescript and Styled Components
 2. Project 2: /pokemon-static
 
-# Create NextJS project using yarn
+# Useful information
+
+## Create NextJS project using yarn
 ```bash
 yarn create next-app
 ```
 
-# Using Docker
+## Using Docker
 
-## Create image of docker:
+### Create image of docker:
 ```bash
 docker build -t nextjs-course .
 ```
 
-## Run docker image:
+### Run docker image:
 ```bash
 docker run --name=nextjs-course -p 3000:3000 nextjs-course
 ```
 
-## Run docker image in port 80:
+### Run docker image in port 80:
 ```bash
 docker run --name=nextjs-course -p 80:3000 nextjs-course
+```
+
+## Using Next UI
+- https://nextui.org/docs/guide/getting-started
+```bash
+yarn add @nextui-org/react
 ```
