@@ -14,6 +14,7 @@ git clone https://github.com/leandrodrey/nextjs-course.git
 2. Install the dependencies
 
 ```bash
+cd project1
 yarn install
 ```
 
