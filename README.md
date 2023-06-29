@@ -20,7 +20,7 @@ I will use one repository for all projects divided by folders.
 * Static Generation - GetStaticProps and GetStaticPaths
 * Incremental Static Regeneration
 
-## 2. Project 3: /open-jira
+## 3. Project 3: /open-jira
 * [Material UI](https://material-ui.com/)
 
 # Useful information
