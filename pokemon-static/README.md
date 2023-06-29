@@ -1,5 +1,5 @@
 
-This is the second Project using NextJS
+# This is the second Project using NextJS
 
 # How to run the app
 

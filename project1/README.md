@@ -1,5 +1,5 @@
 
-This is the first Project using NextJS
+# This is the first Project using NextJS
 
 # How to run the app
 
