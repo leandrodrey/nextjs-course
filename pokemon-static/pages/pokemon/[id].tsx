@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import {GetStaticPaths, GetStaticProps, NextPage} from "next";
 import confetti from 'canvas-confetti';
-import {pokeApi} from "@/api";
 import {PokemonFull} from "@/interfaces";
 import {Layout} from "@/components/layouts";
 import {Button, Card, Container, Grid, Text} from "@nextui-org/react";
@@ -21,16 +20,16 @@ const PokemonPage: NextPage<Props> = (pokemon) => {
         setIsInFavorites(!isInFavorites);
 
         if (isInFavorites) return;
-            confetti({
-                zIndex: 999,
-                particleCount: 100,
-                spread: 160,
-                angle: -100,
-                origin: {
-                    x: 1,
-                    y: 0,
-                }
-            })
+        confetti({
+            zIndex: 999,
+            particleCount: 100,
+            spread: 160,
+            angle: -100,
+            origin: {
+                x: 1,
+                y: 0,
+            }
+        })
     }
 
     return (
@@ -104,7 +103,7 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
         paths: pokemons151.map(id => ({
             params: {id}
         })),
-        fallback: false
+        fallback: 'blocking'
     }
 }
 
@@ -114,10 +113,20 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
 
     const pokemon = await getPokemonInfo(id);
 
+    if (!pokemon) {
+        return {
+            redirect: {
+                destination: '/',
+                permanent: false
+            }
+        }
+    }
+
     return {
         props: {
             pokemon
-        }
+        },
+        revalidate: 86400,
     }
 }
 
