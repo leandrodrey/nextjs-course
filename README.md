@@ -1,14 +1,27 @@
 <div align="center"> 
   <img height="100px" src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg" />
   
-  <h1>NextJS Course from <a target="_blank" href="#">Udemy</a></h1>
+  <h1>Next.JS Course from <a target="_blank" href="http://www.udemy.com/course/nextjs-fh/">Udemy</a></h1>
 </div>
 
 # General information about projects
-- I will use one repository for all projects divided by folders.
+I will use one repository for all projects divided by folders.
 
-1. Project 1: /project1: NextJS with Typescript and Styled Components
-2. Project 2: /pokemon-static
+## 1. Project 1: /project1
+* Basic NextJS
+* Typescript
+* Styled Components
+* NextJS Router
+* Docker
+
+## 2. Project 2: /pokemon-static
+* [Next UI](https://nextui.org/)
+* Local Storage
+* Static Generation - GetStaticProps and GetStaticPaths
+* Incremental Static Regeneration
+
+## 2. Project 3: /openjira
+* [Material UI](https://material-ui.com/)
 
 # Useful information
 
