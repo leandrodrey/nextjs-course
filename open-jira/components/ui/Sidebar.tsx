@@ -1,5 +1,7 @@
 import {Box, Divider, Drawer, List, ListItemButton, ListItemIcon, ListItemText, Typography} from "@mui/material";
 import RestaurantMenuOutlinedIcon from '@mui/icons-material/RestaurantMenuOutlined';
+import {UiContext} from "@/context/ui";
+import {useContext} from "react";
 
 const menuItems = [
     {
@@ -13,11 +15,14 @@ const menuItems = [
 ]
 
 export const Sidebar = () => {
+
+    const {sideMenuOpen, closeSideMenu} = useContext(UiContext);
+
     return (
         <Drawer
             anchor='left'
-            open={true}
-            onClose={() => console.log('cerrando')}
+            open={sideMenuOpen}
+            onClose={() => closeSideMenu()}
         >
             <Box sx={{ width:'250px' }}>
                 <Box sx={{ padding:'5px 10px' }}>
