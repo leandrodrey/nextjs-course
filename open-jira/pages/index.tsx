@@ -1,8 +1,12 @@
+import {Typography} from "@mui/material";
+import {Layout} from "@/components/layouts";
 
 export default function Home() {
     return (
         <>
-            <h1>Open Jira</h1>
+            <Layout>
+                <Typography variant='h1' color='primary'> HOLA </Typography>
+            </Layout>
         </>
     )
 }

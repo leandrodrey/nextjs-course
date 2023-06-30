@@ -6,18 +6,11 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import {ThemeProvider, createTheme} from "@mui/material";
 import CssBaseline from '@mui/material/CssBaseline';
-
-const basicTheme = createTheme(
-    {
-        palette: {
-            mode: 'dark',
-        }
-    }
-);
+import {darkTheme} from "@/themes";
 
 export default function App({Component, pageProps}: AppProps) {
     return (
-        <ThemeProvider theme={basicTheme}>
+        <ThemeProvider theme={darkTheme}>
             <CssBaseline />
             <Component {...pageProps} />
         </ThemeProvider>
