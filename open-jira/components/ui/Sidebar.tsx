@@ -22,7 +22,7 @@ export const Sidebar = () => {
         <Drawer
             anchor='left'
             open={sideMenuOpen}
-            onClose={() => closeSideMenu()}
+            onClose={ closeSideMenu }
         >
             <Box sx={{ width:'250px' }}>
                 <Box sx={{ padding:'5px 10px' }}>
