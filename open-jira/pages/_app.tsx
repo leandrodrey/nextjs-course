@@ -7,14 +7,17 @@ import {ThemeProvider} from "@mui/material";
 import CssBaseline from '@mui/material/CssBaseline';
 import {darkTheme} from "@/themes";
 import {UiProvider} from "@/context/ui";
+import {EntriesProvider} from "@/context/entries";
 
 export default function App({Component, pageProps}: AppProps) {
     return (
-        <UiProvider>
-            <ThemeProvider theme={darkTheme}>
-                <CssBaseline />
-                <Component {...pageProps} />
-            </ThemeProvider>
-        </UiProvider>
+        <EntriesProvider>
+            <UiProvider>
+                <ThemeProvider theme={darkTheme}>
+                    <CssBaseline/>
+                    <Component {...pageProps} />
+                </ThemeProvider>
+            </UiProvider>
+        </EntriesProvider>
     )
 }
