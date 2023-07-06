@@ -24,3 +24,11 @@ yarn dev
 4. Open the browser in the address: http://localhost:3000
 
 5. Enjoy!
+
+# Useful information
+
+## Using Next UI
+- https://nextui.org/docs/guide/getting-started
+```bash
+yarn add @nextui-org/react
+```

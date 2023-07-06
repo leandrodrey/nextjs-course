@@ -33,7 +33,9 @@ In this project i used:
 * [Material UI](https://material-ui.com/)
 * Drag and Drop
 * Contexts, Providers and Reducers
-* Docker compose and MongoDB
+* Docker compose 
+* [MongoDB](https://www.mongodb.com/)
+* [Mongoose ODM](https://mongoosejs.com/)
 * NextJs API
 
 # Useful information
@@ -41,10 +43,4 @@ In this project i used:
 ## Create NextJS project using yarn
 ```bash
 yarn create next-app
-```
-
-## Using Next UI
-- https://nextui.org/docs/guide/getting-started
-```bash
-yarn add @nextui-org/react
 ```
