@@ -12,6 +12,7 @@ export const EntryCard: FC<Props> = ({entry}) => {
     const {startDragging, endDragging} = useContext(UiContext);
 
     const onDragStart = (event: DragEvent) => {
+        // @ts-ignore
         event.dataTransfer.setData('text/plain', entry._id);
         startDragging();
     }
@@ -20,6 +21,7 @@ export const EntryCard: FC<Props> = ({entry}) => {
         endDragging();
     }
 
+    // @ts-ignore
     return (
         <>
             <Card

@@ -22,6 +22,7 @@ export const EntryList: FC<Props> = ({status}) => {
     }
 
     const onDropEntry = (event: DragEvent) => {
+        // @ts-ignore
         const id = event.dataTransfer.getData('text/plain');
         const entry = entries.find(e => e._id === id)!;
         entry.status = status;
@@ -29,6 +30,7 @@ export const EntryList: FC<Props> = ({status}) => {
         endDragging();
     }
 
+    // @ts-ignore
     return (
         <>
             <div
