@@ -1,6 +1,6 @@
 import {Card, CardActionArea, CardActions, CardContent, Typography} from "@mui/material";
 import {Entry} from "@/interfaces";
-import {FC, useContext} from "react";
+import {DragEventHandler, FC, useContext} from "react";
 import {UiContext} from "@/context/ui";
 
 interface Props {
@@ -16,7 +16,7 @@ export const EntryCard: FC<Props> = ({entry}) => {
         startDragging();
     }
 
-    const onDragEnd = (event: DragEvent) => {
+    const onDragEnd = (event: DragEventHandler<HTMLDivElement>) => {
         endDragging();
     }
 
