@@ -9,7 +9,6 @@ If you want to see the project, you must follow the steps below:
 
 ```bash
 git clone https://github.com/leandrodrey/nextjs-course.git
-
 ```
 2. Install the dependencies
 

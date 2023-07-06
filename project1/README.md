@@ -36,3 +36,22 @@ docker run --name=nextjs-course -p 3000:3000 nextjs-course
 2. Open the browser in the address: http://localhost:3000
 
 3. Enjoy!
+
+# Extra information
+
+## Using Docker
+
+### Create image of docker:
+```bash
+docker build -t nextjs-course .
+```
+
+### Run docker image:
+```bash
+docker run --name=nextjs-course -p 3000:3000 nextjs-course
+```
+
+### Run docker image in port 80:
+```bash
+docker run --name=nextjs-course -p 80:3000 nextjs-course
+```

@@ -30,23 +30,6 @@ I will use one repository for all projects divided by folders.
 yarn create next-app
 ```
 
-## Using Docker
-
-### Create image of docker:
-```bash
-docker build -t nextjs-course .
-```
-
-### Run docker image:
-```bash
-docker run --name=nextjs-course -p 3000:3000 nextjs-course
-```
-
-### Run docker image in port 80:
-```bash
-docker run --name=nextjs-course -p 80:3000 nextjs-course
-```
-
 ## Using Next UI
 - https://nextui.org/docs/guide/getting-started
 ```bash
