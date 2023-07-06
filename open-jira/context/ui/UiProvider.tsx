@@ -8,11 +8,13 @@ interface ProviderProps {
 export interface UiState {
     sideMenuOpen: boolean;
     isAddingEntry: boolean;
+    isDragging: boolean;
 }
 
 const UI_INITIAL_STATE: UiState = {
     sideMenuOpen: false,
-    isAddingEntry: false
+    isAddingEntry: false,
+    isDragging: false
 }
 
 export const UiProvider: FC<ProviderProps> = ({children}) => {
@@ -34,6 +36,14 @@ export const UiProvider: FC<ProviderProps> = ({children}) => {
         });
     }
 
+    const startDragging = () => {
+        dispatch({type: 'UI - Start Dragging'});
+    }
+
+    const endDragging = () => {
+        dispatch({type: 'UI - End Dragging'});
+    }
+
     return (
         <UiContext.Provider
             value={{
@@ -42,7 +52,11 @@ export const UiProvider: FC<ProviderProps> = ({children}) => {
                 // Methods
                 openSideMenu,
                 closeSideMenu,
-                setIsAddingEntry
+
+                setIsAddingEntry,
+
+                startDragging,
+                endDragging
             }}
         >
             {children}
