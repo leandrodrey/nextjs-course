@@ -8,6 +8,9 @@
 I will use one repository for all projects divided by folders.
 
 ## 1. Project 1: /project1
+
+In this project i used:
+
 * Basic NextJS
 * Typescript
 * Styled Components
@@ -15,13 +18,23 @@ I will use one repository for all projects divided by folders.
 * Docker
 
 ## 2. Project 2: /pokemon-static
+
+In this project i used:
+
 * [Next UI](https://nextui.org/)
 * Local Storage
 * Static Generation - GetStaticProps and GetStaticPaths
 * Incremental Static Regeneration
 
 ## 3. Project 3: /open-jira
+
+In this project i used:
+
 * [Material UI](https://material-ui.com/)
+* Drag and Drop
+* Contexts, Providers and Reducers
+* Docker compose and MongoDB
+* NextJs API
 
 # Useful information
 
