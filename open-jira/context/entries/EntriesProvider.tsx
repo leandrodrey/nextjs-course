@@ -1,8 +1,8 @@
-import React, {FC, useReducer} from "react";
-import { v4 as uuidv4 } from 'uuid';
+import React, {FC, useEffect, useReducer} from "react";
 
 import {EntriesContext, entriesReducer} from "@/context/entries";
 import {Entry} from "@/interfaces";
+import {entriesApi} from "@/api";
 
 export interface EntriesState {
     entries: Entry[];
@@ -13,44 +13,19 @@ interface ProviderProps {
 }
 
 const ENTRIES_INITIAL_STATE: EntriesState = {
-    entries: [
-        {
-            _id: uuidv4(),
-            description: 'Crear el proyecto',
-            status: 'pending',
-            createdAt: Date.now()
-        },
-        {
-            _id: uuidv4(),
-            description: 'Proyecto en progreso',
-            status: 'in-progress',
-            createdAt: Date.now() - 100000
-        },
-        {
-            _id: uuidv4(),
-            description: 'Proyecto terminado',
-            status: 'finished',
-            createdAt: Date.now() - 10000
-        },
-    ]
+    entries: []
 }
 
 export const EntriesProvider: FC<ProviderProps> = ({children}) => {
 
     const [state, dispatch] = useReducer(entriesReducer, ENTRIES_INITIAL_STATE);
 
-    const addEntry = (description: string) => {
-
-        const newEntry: Entry = {
-            _id: uuidv4(),
-            description,
-            status: 'pending',
-            createdAt: Date.now()
-        }
+    const addEntry = async (description: string) => {
+        const {data} = await entriesApi.post<Entry>('/entries', {description});
 
         dispatch({
             type: '[Entry] Add-Entry',
-            payload: newEntry
+            payload: data
         })
     }
 
@@ -60,6 +35,18 @@ export const EntriesProvider: FC<ProviderProps> = ({children}) => {
             payload: entry
         })
     }
+
+    const refreshEntries = async () => {
+        const {data} = await entriesApi.get<Entry[]>('/entries');
+        dispatch({
+            type: '[Entry] Refresh-Data',
+            payload: data
+        });
+    }
+
+    useEffect(() => {
+        refreshEntries();
+    }, []);
 
     return (
         <EntriesContext.Provider

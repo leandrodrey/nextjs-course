@@ -14,7 +14,15 @@ mongodb://localhost:27017
 ```
 
 # Variables de entorno
-Variable de entorno pública en Next:
+
+* Renombrar el archivo .env.example y agregar las variables de entorno
+
+* Variable de entorno pública en Next:
 ```JSX
 NEXT_PUBLIC_CLIENT_KEY= ASFAFD@#123
+```
+
+## Llenar la base de datos con información de pruebas
+```bash
+localhost:3000/api/seed
 ```

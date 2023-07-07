@@ -37,6 +37,7 @@ In this project i used:
 * [MongoDB](https://www.mongodb.com/)
 * [Mongoose ODM](https://mongoosejs.com/)
 * NextJs API
+* Axios
 
 # Useful information
 
