@@ -38,6 +38,10 @@ In this project i used:
 * [Mongoose ODM](https://mongoosejs.com/)
 * NextJs API
 * Axios
+* Server Side Rendering - GetServerSideProps
+
+## 4. Project 4: /cookies-master
+* Cookies, using, reading and writing in NextJS
 
 # Useful information
 
