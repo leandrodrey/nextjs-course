@@ -36,7 +36,7 @@ In this project i used:
 * Docker compose 
 * [MongoDB](https://www.mongodb.com/)
 * [Mongoose ODM](https://mongoosejs.com/)
-* NextJs API
+* NextJS API
 * Axios
 * Server Side Rendering - GetServerSideProps
 
