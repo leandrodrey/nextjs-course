@@ -21,6 +21,11 @@ mongodb://localhost:27017
 ```JSX
 NEXT_PUBLIC_CLIENT_KEY= ASFAFD@#123
 ```
+# Reconstruir los módulos de Node y levantar Next
+```bash
+yarn install
+yarn dev
+```
 
 ## Llenar la base de datos con información de pruebas
 ```bash
