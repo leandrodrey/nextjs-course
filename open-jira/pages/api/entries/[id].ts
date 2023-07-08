@@ -9,10 +9,10 @@ type Data =
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
 
-    const { id } = req.query;
+    const {id} = req.query;
 
     if (!mongoose.isValidObjectId(id)) {
-        return res.status(400).json({ message: 'Invalid id' + id });
+        return res.status(400).json({message: 'Invalid id' + id});
     }
 
     switch (req.method) {
@@ -27,7 +27,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Data>)
 
 const updateEntry = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
 
-    const { id } = req.query;
+    const {id} = req.query;
 
     await db.connect();
 
@@ -35,10 +35,10 @@ const updateEntry = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
 
     if (!entryToUpdate) {
         await db.disconnect();
-        return res.status(404).json({ message: 'Entry not found' });
+        return res.status(404).json({message: 'Entry not found'});
     }
 
-    const { description = entryToUpdate.description, status = entryToUpdate.status} = req.body;
+    const {description = entryToUpdate.description, status = entryToUpdate.status} = req.body;
 
     try {
         // entryToUpdate.description = description;
@@ -55,18 +55,12 @@ const updateEntry = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
 }
 
 const getEntry = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
-
-        const { id } = req.query;
-
-        await db.connect();
-
-        const entry = await Entry.findById(id);
-
-        await db.disconnect();
-
-        if (!entry) {
-            return res.status(404).json({ message: 'Entry not found' });
-        }
-
-        return res.status(200).json(entry);
+    const {id} = req.query;
+    await db.connect();
+    const entry = await Entry.findById(id);
+    await db.disconnect();
+    if (!entry) {
+        return res.status(404).json({message: 'Entry not found'});
+    }
+    return res.status(200).json(entry);
 }
