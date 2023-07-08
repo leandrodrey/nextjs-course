@@ -51,7 +51,6 @@ const updateEntry = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
         await db.disconnect();
         return res.status(400).json({message: e.errors.status.message})
     }
-
 }
 
 const getEntry = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
