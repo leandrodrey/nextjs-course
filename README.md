@@ -45,3 +45,9 @@ In this project i used:
 ```bash
 yarn create next-app
 ```
+## Upgrade
+```bash
+yarn upgrade-interactive
+
+yarn upgrade-interactive --latest
+```
