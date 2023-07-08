@@ -1,5 +1,6 @@
-import {ChangeEvent, FC, useContext, useMemo, useState} from "react";
-import {GetServerSideProps} from "next";
+import {ChangeEvent, FC, useContext, useMemo, useState} from 'react';
+import {GetServerSideProps} from 'next'
+
 import {
     Button,
     capitalize,
@@ -16,13 +17,15 @@ import {
     RadioGroup,
     TextField
 } from "@mui/material";
+
 import SaveOutlinedIcon from '@mui/icons-material/SaveOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
-import { Entry, EntryStatus } from "@/interfaces";
-import {Layout} from "@/components/layouts";
-import {EntriesContext} from "@/context/entries";
-import { dbEntries } from "@/database";
-import { dateFunctions } from '@/utils';
+
+import {EntriesContext} from '@/context/entries';
+import {dbEntries} from '@/database';
+import {Layout} from '@/components/layouts';
+import {Entry, EntryStatus} from "@/interfaces";
+import {dateFunctions} from '@/utils';
 
 const validStatus: EntryStatus[] = ['pending', 'in-progress', 'finished'];
 
@@ -30,7 +33,8 @@ interface Props {
     entry: Entry
 }
 
-export const EntryPage:FC<Props> = ({ entry }) => {
+
+export const EntryPage: FC<Props> = ({entry}) => {
 
     const {updateEntry} = useContext(EntriesContext);
 
@@ -62,6 +66,7 @@ export const EntryPage:FC<Props> = ({ entry }) => {
 
 
     return (
+
         <Layout>
             <Grid
                 container
@@ -109,7 +114,6 @@ export const EntryPage:FC<Props> = ({ entry }) => {
                                     }
                                 </RadioGroup>
                             </FormControl>
-
                         </CardContent>
 
                         <CardActions>
@@ -123,13 +127,9 @@ export const EntryPage:FC<Props> = ({ entry }) => {
                                 Save
                             </Button>
                         </CardActions>
-
                     </Card>
-
                 </Grid>
-
             </Grid>
-
 
             <IconButton sx={{
                 position: 'fixed',
@@ -144,20 +144,17 @@ export const EntryPage:FC<Props> = ({ entry }) => {
         </Layout>
 
     );
-
-}
+};
 
 // You should use getServerSideProps when:
 // - Only if you need to pre-render a page whose data must be fetched at request time
+export const getServerSideProps: GetServerSideProps = async ({params}) => {
 
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+    const {id} = params as { id: string };
 
-    const { id } = params as { id: string };
+    const entry = await dbEntries.getEntryById(id);
 
-    const entry = await dbEntries.getEntryById( id );
-
-
-    if ( !entry ) {
+    if (!entry) {
         return {
             redirect: {
                 destination: '/',
@@ -166,14 +163,11 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
         }
     }
 
-
     return {
         props: {
             entry
         }
     }
 }
-
-
 
 export default EntryPage;
