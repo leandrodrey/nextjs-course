@@ -1,4 +1,5 @@
 import Document, {DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript} from 'next/document'
+import {ReactElement} from "react";
 
 class MyDocument extends Document {
     static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -6,7 +7,7 @@ class MyDocument extends Document {
         return initialProps
     }
 
-    render() {
+    render(): ReactElement {
         return (
             <Html>
                 <Head/>
@@ -17,6 +18,7 @@ class MyDocument extends Document {
             </Html>
         )
     }
+
 }
 
 export default MyDocument
