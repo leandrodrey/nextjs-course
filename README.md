@@ -41,7 +41,9 @@ In this project i used:
 * Server Side Rendering - GetServerSideProps
 
 ## 4. Project 4: /cookies-master
-* Cookies, using, reading and writing in NextJS
+* Using, reading and writing Cookies in NextJS.
+* [JavaScript Cookie](https://www.npmjs.com/package/js-cookie)
+* GetInitialProps
 
 # Useful information
 
@@ -49,9 +51,14 @@ In this project i used:
 ```bash
 yarn create next-app
 ```
-## Upgrade
+## Yarn upgrade
 ```bash
 yarn upgrade-interactive
 
 yarn upgrade-interactive --latest
+```
+
+## Add Typescript
+```bash
+yarn add -D @types/dependency
 ```
